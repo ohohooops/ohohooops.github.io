@@ -1,0 +1,99 @@
+<!doctype:html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="practicejs.js"></script>
+    <style type="text/css">
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="prac.css">
+    <title>practicejs</title>
+</head>
+
+<body>
+    <div class="gamescene font1">
+        <!--     <img id="sceneimg" src="scene0.png">
+        <h3>Choose</h3>
+        <button type="button" id="decision1" value="1" onclick="changeScene(1)">1</button>
+        <button type="button" ID="decision2" value="2" onclick="changeScene(2)">2</button> -->
+        <script type="text/javascript">
+        var _randomValue = Math.ceil((Math.random() + 1) * 1000);
+        //var _randomValue = 1575;
+
+        startGuess();
+
+        function startGuess() {
+            var userKey = prompt("輸入4個數字");
+
+            var key0 = "8";
+            var key1 = "7";
+            var key2 = "5";
+            var key3 = "1";
+
+            var _arrayInput = userKey.toString().split("");
+            while (_arrayInput.length != 4) {
+                userKey = prompt("輸入錯誤!請輸入4個數字", "");
+                _arrayInput = userKey.toString().split("");
+
+            }
+
+            /*  _arrayInput.push(prompt());
+              _arrayInput.push(key1);
+              _arrayInput.push(key2);
+              _arrayInput.push(key3);*/
+            document.write("使用者猜: " + _arrayInput[0] + " " + _arrayInput[1] + " " + _arrayInput[2] + " " + _arrayInput[3] + "   <br/> ");
+
+            var _splitString = _randomValue.toString().split("");
+
+            var A = 0;
+            var B = 0;
+            var Answer = [];
+            for (var i = 0; i < _splitString.length; i++) {
+                if (_splitString[i] == _arrayInput[i]) {
+                    A++;
+                    Answer.push(i);
+                } else {
+                    for (var j = 0; j < _arrayInput.length; j++) {
+                        // document.write(_arrayInput[j] + "   <br/> ");
+                        if (Answer.length > 0) {
+                            for (var g = 0; g < Answer.length; g++) {
+
+                                if (j !== Answer[g]) {
+                                    if (_splitString[i] == _arrayInput[j]) {
+                                        B++;
+                                        break;
+                                    }
+                                }
+                            }
+
+                        } else if (_splitString[i] == _arrayInput[j]) {
+                            //document.write(_splitString[i] +" " + _arrayInput[j] + "   <br/> ");
+                            B++;
+                            break;
+                        }
+                    };
+
+                }
+            };
+            document.write("結果: " + A + "A" + B + "B" + "   <br/> ");
+            alert("結果: " + A + "A" + B + "B" );
+            getValue(A);
+        }
+
+        function getValue(A) {
+            if (A == 4) {
+                document.write("U Win!");
+                document.write("2!");
+            } else {
+
+                startGuess();
+            }
+
+        }
+        </script>
+       <!-- <button type="button" onclick="startGuess()">Guess</button>-->
+    </div>
+</body>
+
+</html>

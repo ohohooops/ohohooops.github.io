@@ -1,0 +1,97 @@
+/*第1個圈*/
+
+.cir1 {
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -50px;
+    padding: 30px;
+    background-color: orange;
+    width: 175px;
+    height: 175px;
+    border-radius: 250px;
+}
+
+.font1 {
+    margin-left: 25px;
+    color: yellow;
+}
+
+
+/*第2個圈*/
+
+.circle2 {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 200px;
+    padding: 30px;
+    background-color: brown;
+    width: 175px;
+    height: 175px;
+    border-radius: 250px;
+}
+
+.font2 {
+    margin-top: 40px;
+    color: white;
+}
+
+
+/*第3個圈 main Ins*/
+
+.circle3 {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 150px;
+    padding: 30px;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 500px;
+    text-align: center;
+    color: brown;
+}
+
+.circle4 {
+    position: absolute;
+    margin-left: 500px;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: white;
+    width: 125px;
+    height: 125px;
+    border-radius: 500px;
+}
+
+.circle5 {
+    position: fixed;
+    margin-left: 600px;
+    margin-top: 500px;
+    padding: 30px;
+    background-color: brown;
+    width: 50px;
+    height: 50px;
+    border-radius: 500px;
+
+}
+
+.font5 { 
+    margin-top: 0px;
+    margin-left: -5px;
+    max-width: 10px;
+    color: white;
+    white-space:nowrap; 
+}
+.circle6 {
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 600px;
+    padding: 30px;
+    background-color: orange;
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+    font-size: 15px;
+    color: yellow;
+
+}
+.allbody {font-family: impact;}

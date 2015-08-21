@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Mandango - The Macho Movie Ticket Finder</title>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+    var seats = [];
+    var rowMax = 4;
+    var colMax = 9;
+    var selectSeat = -1;
+    for (var row = 0; row < rowMax; row++) {
+        seats[row] = [];
+        for (var col = 0; col < colMax; col++) {
+            seats[row][col] = (Math.round(Math.random()) == 1); //利用二微陣列亂數產生座位
+        }
+    }
+
+    function initSeats() {
+        for (var row = 0; row < seats.length; row++)
+            for (var col = 0; col < seats[row].length; col++) {
+                var seatImage = "seat_" + ((seats[row][col]) ? "avail" : "unavail") + ".png"; //設定座位圖片，使用三元運算子
+                document.getElementById("seat" + (row * seats[row].length + col)).src = seatImage;
+            }
+    }
+
+    function findSeats() {
+                var visableSeats = [];
+        for (var i = 0; i < seats.length; i++) {
+            if (seats[i]) {
+                visableSeats.push(i);
+                if (visableSeats.length == 3) {
+                    break;
+                }
+            } else {
+                visableSeats = [];
+            }
+        };
+        for (var i = 0; i < visableSeats.length; i++) {
+             document.getElementById("seat" + visableSeats[i]).src = "seat_select.png";
+        };
+    }
+    </script>
+</head>
+
+<body onload="initSeats();">
+    <h1>Click</h1>
+    <div style="margin-top:25px; text-align:center">
+        <img id="seat0" src="" alt="" />
+        <img id="seat1" src="" alt="" />
+        <img id="seat2" src="" alt="" />
+        <img id="seat3" src="" alt="" />
+        <img id="seat4" src="" alt="" />
+        <img id="seat5" src="" alt="" />
+        <img id="seat6" src="" alt="" />
+        <img id="seat7" src="" alt="" />
+        <img id="seat8" src="" alt="" />
+        <br />
+        <img id="seat9" src="" alt="" />
+        <img id="seat10" src="" alt="" />
+        <img id="seat11" src="" alt="" />
+        <img id="seat12" src="" alt="" />
+        <img id="seat13" src="" alt="" />
+        <img id="seat14" src="" alt="" />
+        <img id="seat15" src="" alt="" />
+        <img id="seat16" src="" alt="" />
+        <img id="seat17" src="" alt="" />
+        <br />
+        <img id="seat18" src="" alt="" />
+        <img id="seat19" src="" alt="" />
+        <img id="seat20" src="" alt="" />
+        <img id="seat21" src="" alt="" />
+        <img id="seat22" src="" alt="" />
+        <img id="seat23" src="" alt="" />
+        <img id="seat24" src="" alt="" />
+        <img id="seat25" src="" alt="" />
+        <img id="seat26" src="" alt="" />
+        <br />
+        <img id="seat27" src="" alt="" />
+        <img id="seat28" src="" alt="" />
+        <img id="seat29" src="" alt="" />
+        <img id="seat30" src="" alt="" />
+        <img id="seat31" src="" alt="" />
+        <img id="seat32" src="" alt="" />
+        <img id="seat33" src="" alt="" />
+        <img id="seat34" src="" alt="" />
+        <img id="seat35" src="" alt="" />
+        <br />
+        <input type="button" id="findseats" value="Find Seats" onclick="findSeats();" />
+    </div>
+</body>
+
+</html>

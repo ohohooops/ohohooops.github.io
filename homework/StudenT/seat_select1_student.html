@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Mandango - The Macho Movie Ticket Finder</title>
+    <script type="text/javascript">
+    var seats = [true, true, false, false, true, true, true, false, false];
+    var selectSeat = -1;
+
+    function initSeats() {
+        for (var col = 0; col < seats.length; col++) {
+            if (seats[col]) {
+                document.getElementById("seat" + col).src = "seat_avail.png";
+
+            } else {
+                document.getElementById("seat" + col).src = "seat_unavail.png";
+            }
+        }
+    }
+
+    function findSeats() {
+        var visableSeats = [];
+        for (var i = 0; i < seats.length; i++) {
+            if (seats[i]) {
+                visableSeats.push(i);
+                if (visableSeats.length == 3) {
+                    break;
+                }
+            } else {
+                visableSeats = [];
+            }
+        };
+        for (var i = 0; i < visableSeats.length; i++) {
+             document.getElementById("seat" + visableSeats[i]).src = "seat_select.png";
+        };
+
+       
+    }
+    </script>
+</head>
+
+<body onload="initSeats();">
+    <div style="margin-top:75px; text-align:center">
+        <img id="seat0" src="" alt="" />
+        <img id="seat1" src="" alt="" />
+        <img id="seat2" src="" alt="" />
+        <img id="seat3" src="" alt="" />
+        <img id="seat4" src="" alt="" />
+        <img id="seat5" src="" alt="" />
+        <img id="seat6" src="" alt="" />
+        <img id="seat7" src="" alt="" />
+        <img id="seat8" src="" alt="" />
+        <br />
+        <input type="button" id="findseats" value="Find Seats" onclick="findSeats();" />
+    </div>
+</body>
+
+</html>
